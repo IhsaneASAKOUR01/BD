@@ -9,7 +9,7 @@ st.markdown("<h1 style='text-align: center;'>📋 AO Tools Dashboard</h1>", unsa
 st.markdown("---")
 
 tab1, tab2, tab3 = st.tabs([
-    "🔁 CVs & REFs Adapter",
+    "🔁 CCCCCC",
     "🧠 Reference Creator",
     "📄 CVs Adapter"
 ])
