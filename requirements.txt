@@ -1,7 +1,7 @@
 streamlit
-openai==0.27.8
+openai
 python-docx
+PyPDF2
+python-pptx
 deep-translator
 langdetect
-PyPDF2
-
