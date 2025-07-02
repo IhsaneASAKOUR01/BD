@@ -20,7 +20,7 @@ choice = st.sidebar.radio(
 # 3) Header area with logo + title
 col1, col2 = st.columns([1, 8])
 with col1:
-    st.image("https://i.imgur.com/4AiXzf8.png", width=80)  # your logo url
+    st.image("https://media.licdn.com/dms/image/v2/C560BAQEcFreaTdl3pA/company-logo_200_200/company-logo_200_200/0/1652801538847/africa_climate_solutions_logo?e=1756944000&v=beta&t=TNV2ntWdNm-mOqn81Pzfgj8_4URETN6fqNzkr48Lu5Y", width=80)  # your logo url
 with col2:
     st.markdown("<h1 style='margin-bottom: 0'>🧰 AO Tools Dashboard</h1>", unsafe_allow_html=True)
     st.caption("Pick a tool from the sidebar and get going!")
