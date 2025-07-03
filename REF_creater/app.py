@@ -7,8 +7,54 @@ from .template_filler import fill_reference_table, fill_template_with_debug
 from .utils import load_report_text
 from deep_translator import GoogleTranslator
 
+st.markdown("""
+    <style>
+    /* Centered title */
+    .custom-title {
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #1d3557;
+        margin-top: 1rem;
+        margin-bottom: 0.2rem;
+        font-family: 'Comic Neue', cursive;
+    }
+    .custom-desc {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 2rem;
+    }
+
+    /* Upload box */
+    section[data-testid="stFileUploader"] {
+        background: #f1f3f5;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid #ced4da;
+        margin-bottom: 2rem;
+    }
+
+    /* Submit button */
+    button[kind="primary"] {
+        background-color: #339af0;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.6rem 1.2rem;
+        font-weight: 600;
+        transition: all 0.2s ease-in-out;
+    }
+    button[kind="primary"]:hover {
+        background-color: #1c7ed6;
+        box-shadow: 0 0 6px rgba(51, 154, 240, 0.6);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 def run_app():
-    st.title("Reference Generator")
+    st.markdown("<div class='custom-title'>Reference Generator</div>", unsafe_allow_html=True)
+    st.markdown("<div class='custom-desc'>Upload your project report and generate bilingual reference documents</div>", unsafe_allow_html=True)
 
     if "field_values" not in st.session_state:
         st.session_state["field_values"] = None
@@ -91,7 +137,7 @@ def run_app():
     if st.session_state["output_path_fr"]:
         with open(st.session_state["output_path_fr"], "rb") as f:
             st.download_button(
-                label="Download French Version",
+                label="📥 Download French Version",
                 data=f,
                 file_name=st.session_state["output_path_fr"].name,
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -100,7 +146,7 @@ def run_app():
     if st.session_state["output_path_en"]:
         with open(st.session_state["output_path_en"], "rb") as f:
             st.download_button(
-                label="Download English Version",
+                label="📥 Download English Version",
                 data=f,
                 file_name=st.session_state["output_path_en"].name,
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
