@@ -18,8 +18,6 @@ from .resume_adapter import (
 )
 
 
-openai.api_key = "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"
-
 @st.cache_data(show_spinner=False)
 def cached_adaptation(sections_list, ao_title):
     return adapt_all_sections(sections_list, ao_title)
