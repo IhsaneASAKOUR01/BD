@@ -8,73 +8,77 @@ from .utils import load_report_text
 from deep_translator import GoogleTranslator
 
 st.markdown("""
-    <style>
-    .main .block-container {
-        padding-top: 2rem;
-        max-width: 1000px;
-        margin: auto;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
-    /* TITLE */
-    .ref-title {
-        text-align: center;
-        font-size: 3.2rem;
-        font-weight: 700;
-        color: #1d3557;
-        font-family: 'Segoe UI', sans-serif;
-        margin-bottom: 0.5rem;
-    }
+<style>
+html, body, .stApp {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+}
 
-    /* UPLOAD BOX */
-    section[data-testid="stFileUploader"] {
-        background: #f1f3f5;
-        padding: 1.2rem 1rem;
-        border: 1px solid #ced4da;
-        border-radius: 10px;
-        margin-bottom: 2rem;
-    }
+.custom-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-    /* BUTTON */
-    button[kind="primary"] {
-        background-color: #1d3557;
-        color: #fff;
-        padding: 0.6rem 1.2rem;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.2s ease;
-    }
+.custom-desc {
+    text-align: center;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
 
-    button[kind="primary"]:hover {
-        background-color: #2c5282;
-        box-shadow: 0 0 6px rgba(29, 53, 87, 0.4);
-        transform: scale(1.02);
-    }
+section[data-testid="stFileUploader"] {
+    background: #ffffff;
+    border: 2px dashed #339af0;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
 
-    /* DOWNLOAD BUTTON */
-    .stDownloadButton > button {
-        background-color: #339af0;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        padding: 0.5rem 1rem;
-        margin-top: 1rem;
-    }
-    .stDownloadButton > button:hover {
-        background-color: #1971c2;
-        transform: scale(1.02);
-    }
-    </style>
+button[kind="primary"] {
+    background: linear-gradient(135deg, #339af0, #1c7ed6);
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    margin-top: 1rem;
+}
+button[kind="primary"]:hover {
+    background: linear-gradient(135deg, #1c7ed6, #339af0);
+    box-shadow: 0 0 10px rgba(51, 154, 240, 0.5);
+    transform: scale(1.03);
+}
+
+.stDownloadButton > button {
+    background-color: #339af0;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    margin: 1rem 0.5rem 0 0;
+    transition: 0.2s ease-in-out;
+}
+.stDownloadButton > button:hover {
+    background-color: #1c7ed6;
+    transform: scale(1.05);
+}
+</style>
 """, unsafe_allow_html=True)
-
-st.markdown("<div class='ref-title'>Reference Generator</div>", unsafe_allow_html=True)
 
 
 def run_app():
-    st.markdown("<div class='custom-title'>Reference Generator</div>", unsafe_allow_html=True)
-    st.markdown("<div class='custom-desc'>Upload your project report and generate bilingual reference documents</div>", unsafe_allow_html=True)
-
     if "field_values" not in st.session_state:
         st.session_state["field_values"] = None
     if "output_path_fr" not in st.session_state:
