@@ -100,8 +100,8 @@ with st.sidebar:
     st.image("logo.png")
     choice = st.radio("Choose a tool", [
         "CVs & REFs Adapter",
-        "Reference Creator",
-        "CVs Extractor & Mapper"
+        "REF Creator",
+        "CVs Template Adapter"
     ])
 
 # === HEADER ===
