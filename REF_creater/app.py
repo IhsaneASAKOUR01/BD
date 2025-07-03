@@ -8,7 +8,7 @@ from .utils import load_report_text
 from deep_translator import GoogleTranslator
 
 def run_app():
-    st.title("📄 Reference Generator")
+    st.title("Reference Generator")
 
     if "field_values" not in st.session_state:
         st.session_state["field_values"] = None
@@ -21,7 +21,7 @@ def run_app():
         "Upload Project Report (.docx, .pdf, .pptx, .txt)", 
         type=["docx", "pdf", "pptx", "txt"]
     )
-    submit = st.button("🚀 Submit", key="submit_ref_creator")
+    submit = st.button("Submit", key="submit_ref_creator")
 
     # ✅ Reset the generation if a different file is uploaded
     if uploaded_report and "last_uploaded" in st.session_state:
@@ -91,7 +91,7 @@ def run_app():
     if st.session_state["output_path_fr"]:
         with open(st.session_state["output_path_fr"], "rb") as f:
             st.download_button(
-                label="📥 Download French Version",
+                label="Download French Version",
                 data=f,
                 file_name=st.session_state["output_path_fr"].name,
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -100,7 +100,7 @@ def run_app():
     if st.session_state["output_path_en"]:
         with open(st.session_state["output_path_en"], "rb") as f:
             st.download_button(
-                label="📥 Download English Version",
+                label="Download English Version",
                 data=f,
                 file_name=st.session_state["output_path_en"].name,
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
