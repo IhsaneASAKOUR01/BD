@@ -115,12 +115,12 @@ if choice == "CVs & REFs Adapter":
     st.write("Extract, align and enhance CVs & reference docs per AO instructions.")
     run_cvs_refs_adapter()
 
-elif choice == "Reference Creator":
-    st.subheader("Reference Creator")
+elif choice == "REF Creator":
+    st.subheader("REF Creator")
     st.write("Generate complete bilingual references directly from reports.")
     run_ref_creator()
 
 else:
-    st.subheader("CVs Extractor & Mapper")
+    st.subheader("CVs Template Adapter")
     st.write("Extract, map, and reformat CVs into your preferred structure.")
     run_cvs_adapter()
