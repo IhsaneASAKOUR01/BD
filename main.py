@@ -11,6 +11,9 @@ st.set_page_config(
 
 # === STYLES ===
 st.markdown("""
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
     <style>
     /* Sidebar background */
     [data-testid="stSidebar"] {
@@ -32,7 +35,7 @@ st.markdown("""
     /* Page title */
     .centered-title {
         text-align: center;
-        font-size: 5rem;
+        font-size: 4rem;
         font-weight: 800;
         color: #1d3557;
         margin-bottom: 0.2rem;
