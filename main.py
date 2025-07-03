@@ -41,15 +41,17 @@ st.markdown("""
     /* Logo */
     [data-testid="stSidebar"] img {
         display: block;
-        margin: 2rem auto 1rem auto;
         width: 180px;
-        margin-bottom: 20px;
+        margin-left: 8px;
+        margin-right: auto;
+        margin-top: 1rem;
+        margin-bottom: 30px;
     }
     
     /* Title */
     .centered-title {
         text-align: center;
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: 800;
         color: #1d3557;
         margin-bottom: 0.2rem;
