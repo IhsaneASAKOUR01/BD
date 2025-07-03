@@ -12,53 +12,55 @@ st.set_page_config(
 # === STYLES ===
 st.markdown("""
     <style>
+    /* Root sizing */
     html {
-        font-size: 14px !important;
+        font-size: 13px !important;
+        zoom: 0.85;
     }
-
-    /* Limit main content width */
+    
+    body, .stApp {
+        font-size: 13px;
+    }
+    
+    /* Container width and spacing */
     .main .block-container {
-        max-width: 880px;
+        max-width: 900px;
         padding-left: 1rem;
         padding-right: 1rem;
         margin: auto;
     }
-
-    body, .stApp {
-        font-size: 14px;
-    }
-
-    /* Sidebar */
+    
+    /* Sidebar size + border */
     [data-testid="stSidebar"] {
         background-color: #f8f9fa !important;
-        min-width: 300px;
         width: 300px;
+        min-width: 300px;
         border-right: 2px solid #dee2e6;
     }
-
+    
+    /* Logo */
     [data-testid="stSidebar"] img {
         display: block;
         margin: 2rem auto 1rem auto;
         width: 180px;
     }
-
+    
     /* Title */
     .centered-title {
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-weight: 800;
         color: #1d3557;
         margin-bottom: 0.2rem;
-        font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+        font-family: 'Comic Neue', cursive;
     }
-
     .subtitle {
         text-align: center;
         color: #6c757d;
         margin-bottom: 2rem;
         font-size: 1rem;
     }
-
+    
     /* Radio buttons */
     .stRadio div[role=radiogroup] > label {
         background: #fff;
@@ -71,17 +73,14 @@ st.markdown("""
         align-items: center;
         gap: 10px;
     }
-
     .stRadio div[role=radiogroup] > label:hover {
         background-color: #eaf4ff;
         border: 1px solid #339af0;
         cursor: pointer;
     }
-
     .stRadio input[type="radio"] + div svg {
         fill: #339af0 !important;
     }
-
     .stRadio div[role=radiogroup] > label:has(input[type="radio"]:checked) {
         background-color: #eaf4ff;
         border: 1px solid #339af0;
@@ -90,6 +89,7 @@ st.markdown("""
         color: #222;
     }
     </style>
+
 """, unsafe_allow_html=True)
 
 # === SIDEBAR ===
