@@ -45,7 +45,7 @@ st.markdown("""
         margin-left: 2rem;
         margin-right: auto;
         margin-top: 1rem;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
     
     /* Title */
@@ -98,7 +98,7 @@ st.markdown("""
 # === SIDEBAR ===
 with st.sidebar:
     st.image("logo.png")
-    choice = st.radio("Choose a tool22", [
+    choice = st.radio("Choose a tool", [
         "CVs & REFs Adapter",
         "Reference Creator",
         "CVs Extractor & Mapper"
