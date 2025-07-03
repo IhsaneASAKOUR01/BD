@@ -17,22 +17,26 @@ st.markdown("""
         background-color: #f8f9fa !important;
         min-width: 300px;
         width: 300px;
+        border-right: 2px solid #dee2e6; 
     }
 
     /* Sidebar logo */
+    /* Sidebar logo */
     [data-testid="stSidebar"] img {
         display: block;
-        margin: 1.5rem auto 2rem auto;
-        width: 140px;
+        margin: 2rem auto 1rem auto;
+        width: 180px;
     }
+
 
     /* Page title */
     .centered-title {
         text-align: center;
-        font-size: 3rem;
-        font-weight: bold;
+        font-size: 5rem;
+        font-weight: 800;
         color: #1d3557;
         margin-bottom: 0.2rem;
+        font-family: 'Comic Sans MS', 'Comic Neue', cursive;
     }
     .subtitle {
         text-align: center;
@@ -80,7 +84,6 @@ st.markdown("""
 # === SIDEBAR ===
 with st.sidebar:
     st.image("https://media.licdn.com/dms/image/v2/C560BAQEcFreaTdl3pA/company-logo_200_200/company-logo_200_200/0/1652801538847/africa_climate_solutions_logo?e=1756944000&v=beta&t=TNV2ntWdNm-mOqn81Pzfgj8_4URETN6fqNzkr48Lu5Y")
-    st.title("Navigation")
     choice = st.radio("Choose a tool", [
         "CVs & REFs Adapter",
         "Reference Creator",
