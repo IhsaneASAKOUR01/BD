@@ -35,7 +35,7 @@ if "resume_results" not in st.session_state:
     st.session_state["resume_results"] = []
 
 def run_app():
-    st.title("AO Adapter: REFs & CVs 🤖")
+    st.title("AO Adapter: REFs & CVs")
 
     ao_title = st.text_input("AO Title", placeholder="Enter the AO title...")
     uploaded_ref = st.file_uploader("Upload Reference .docx file", type=["docx"], key="ref")
