@@ -3,46 +3,101 @@ from CVs_REFs_adapter.app import run_app as run_cvs_refs_adapter
 from REF_creater.app import run_app as run_ref_creator
 from CVs_adapter.app import run_app as run_cvs_adapter
 
-# 1) Page config + wide layout + new icon
+# Page config
 st.set_page_config(
     page_title="AO Tools Dashboard",
-    page_icon="🚀",       # switched to a rocket
+    page_icon="https://media.licdn.com/dms/image/v2/C560BAQEcFreaTdl3pA/company-logo_200_200/company-logo_200_200/0/1652801538847/africa_climate_solutions_logo?e=1756944000&v=beta&t=TNV2ntWdNm-mOqn81Pzfgj8_4URETN6fqNzkr48Lu5Y",
     layout="wide"
 )
 
-# 2) Sidebar navigation (no emojis here)
-st.sidebar.title("AO Tools")
-choice = st.sidebar.radio(
-    "Select a tool",
-    ("CVs & REFs Adapter", "Reference Creator", "CVs Extractor")
-)
+# === Custom CSS for background, sidebar, layout ===
+st.markdown("""
+    <style>
+        /* Background image */
+        .stApp {
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            background-size: cover;
+        }
 
-# 3) Header area with larger logo + plain title
+        /* Sidebar */
+        section[data-testid="stSidebar"] {
+            background-color: #f0f2f6;
+            border-right: 2px solid #ddd;
+        }
+
+        /* Header text */
+        h1 {
+            font-size: 3rem !important;
+            color: #0c4a6e;
+        }
+
+        .header-container {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Logo */
+        .logo-container img {
+            border-radius: 12px;
+        }
+
+        /* Description text */
+        .caption {
+            font-size: 1.1rem;
+            color: #5a5a5a;
+        }
+
+        /* Section headers */
+        .section-header {
+            font-size: 1.7rem;
+            color: #1a3d5d;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        /* Divider */
+        hr {
+            border-top: 2px solid #ccc;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Header layout
 col1, col2 = st.columns([1, 6])
 with col1:
-    # bump logo width to 150px
+    st.markdown('<div class="logo-container">', unsafe_allow_html=True)
     st.image(
         "https://media.licdn.com/dms/image/v2/C560BAQEcFreaTdl3pA/company-logo_200_200/company-logo_200_200/0/1652801538847/africa_climate_solutions_logo?e=1756944000&v=beta&t=TNV2ntWdNm-mOqn81Pzfgj8_4URETN6fqNzkr48Lu5Y",
-        width=150
+        width=180
     )
+    st.markdown('</div>', unsafe_allow_html=True)
 with col2:
-    st.markdown("<h1 style='margin-bottom: 0'>AO Tools Dashboard</h1>", unsafe_allow_html=True)
-    st.caption("Choose a tool on the left to get started")
+    st.markdown('<div class="header-container">', unsafe_allow_html=True)
+    st.markdown("<h1>AO Tools Dashboard</h1>", unsafe_allow_html=True)
+    st.markdown("<div class='caption'>Smart automation tools for project references & resumes</div>", unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
-st.markdown("---")
+st.markdown("<hr>", unsafe_allow_html=True)
 
-# 4) Main area, clean headers + descriptions (no emojis)
+# Sidebar navigation
+st.sidebar.title("Navigation")
+choice = st.sidebar.radio(
+    "Choose a tool",
+    ("CVs & REFs Adapter", "Reference Creator", "CVs Extractor & Mapper")
+)
+
+# Tool display
 if choice == "CVs & REFs Adapter":
-    st.header("CVs & REFs Adapter")
-    st.write("Adapt reference documents and CVs to your specific AO.")
+    st.markdown('<div class="section-header">CVs & REFs Adapter</div>', unsafe_allow_html=True)
+    st.write("Automatically align reference files and CVs with a specific AO.")
     run_cvs_refs_adapter()
 
 elif choice == "Reference Creator":
-    st.header("Reference Creator")
-    st.write("Extract fields from reports and generate reference documents.")
+    st.markdown('<div class="section-header">Reference Creator</div>', unsafe_allow_html=True)
+    st.write("Generate bilingual reference documents directly from project reports.")
     run_ref_creator()
 
 else:
-    st.header("CVs Section Extractor & Mapper")
-    st.write("Map extracted resume sections into your custom template.")
+    st.markdown('<div class="section-header">CVs Section Extractor & Mapper</div>', unsafe_allow_html=True)
+    st.write("Extract, map, and reformat CVs into your preferred structure.")
     run_cvs_adapter()
