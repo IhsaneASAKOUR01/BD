@@ -3,7 +3,7 @@ import time
 import json
 from openai import RateLimitError
 
-openai.api_key = "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"
+openai.api_key = st.secrets["openai"]["api_key"]
 
 def extract_field(report_text, fields):
     def split_text(text, max_tokens=3000):
