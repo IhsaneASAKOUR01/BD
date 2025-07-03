@@ -11,55 +11,55 @@ st.set_page_config(
 
 # === STYLES ===
 st.markdown("""
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
     <style>
+    html {
+        font-size: 14px !important;
+    }
+
     /* Limit main content width */
     .main .block-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-    html, body, .stApp {
-    font-size: 15px;
+        max-width: 880px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: auto;
     }
 
-    /* Sidebar background */
+    body, .stApp {
+        font-size: 14px;
+    }
+
+    /* Sidebar */
     [data-testid="stSidebar"] {
         background-color: #f8f9fa !important;
         min-width: 300px;
         width: 300px;
-        border-right: 2px solid #dee2e6; 
+        border-right: 2px solid #dee2e6;
     }
 
-    /* Sidebar logo */
-    /* Sidebar logo */
     [data-testid="stSidebar"] img {
         display: block;
         margin: 2rem auto 1rem auto;
         width: 180px;
     }
 
-
-    /* Page title */
+    /* Title */
     .centered-title {
         text-align: center;
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 800;
         color: #1d3557;
         margin-bottom: 0.2rem;
-        font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+        font-family: 'Comic Neue', 'Comic Sans MS', cursive;
     }
+
     .subtitle {
         text-align: center;
         color: #6c757d;
         margin-bottom: 2rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
-    /* Radio layout */
+    /* Radio buttons */
     .stRadio div[role=radiogroup] > label {
         background: #fff;
         padding: 0.5rem 1rem;
@@ -71,20 +71,17 @@ st.markdown("""
         align-items: center;
         gap: 10px;
     }
+
     .stRadio div[role=radiogroup] > label:hover {
         background-color: #eaf4ff;
         border: 1px solid #339af0;
         cursor: pointer;
     }
 
-    /* Blue dot */
-    /* Make the actual dot inside the radio blue */
     .stRadio input[type="radio"] + div svg {
         fill: #339af0 !important;
     }
 
-
-    /* Selected effect */
     .stRadio div[role=radiogroup] > label:has(input[type="radio"]:checked) {
         background-color: #eaf4ff;
         border: 1px solid #339af0;
@@ -97,7 +94,7 @@ st.markdown("""
 
 # === SIDEBAR ===
 with st.sidebar:
-    st.image("https://media.licdn.com/dms/image/v2/C560BAQEcFreaTdl3pA/company-logo_200_200/company-logo_200_200/0/1652801538847/africa_climate_solutions_logo?e=1756944000&v=beta&t=TNV2ntWdNm-mOqn81Pzfgj8_4URETN6fqNzkr48Lu5Y")
+    st.image("https://media.licdn.com/dms/image/v2/C560BAQEcFreaTdl3pA/company-logo_200_200/company-logo_200_200/0/1652801538847/africa_climate_solutions_logo")
     choice = st.radio("Choose a tool", [
         "CVs & REFs Adapter",
         "Reference Creator",
