@@ -8,11 +8,11 @@ from .docx_generator import fill_docx_template_by_labels
 import os
 
 def run_app():
-    st.title("📄 CV Section Extractor & Mapper")
+    st.title("CV Section Extractor & Mapper")
 
     uploaded_resumes = st.file_uploader("Upload Resume(s) (.docx)", type=["docx"], accept_multiple_files=True)
     uploaded_template = st.file_uploader("Upload Template (.docx)", type=["docx"])
-    submit = st.button("🚀 Submit", key="submit_cv_adapter")
+    submit = st.button("Submit", key="submit_cv_adapter")
 
 
     if submit and uploaded_resumes and uploaded_template:
@@ -38,17 +38,17 @@ def run_app():
                 fill_docx_template_by_labels(template_path, filled_dict, output_path)
 
                 # Display debug
-                with st.expander("📄 Resume Extracted Text"):
+                with st.expander("Resume Extracted Text"):
                     st.text(resume_text)
-                with st.expander("🧾 Template Raw Text"):
+                with st.expander("Template Raw Text"):
                     st.text(template_raw_text)
-                with st.expander("🤖 GPT Output (Dict)"):
+                with st.expander("GPT Output (Dict)"):
                     st.json(filled_dict)
 
                 # Download
                 with open(output_path, "rb") as f:
                     st.download_button(
-                        label=f"📥 Download {output_name}",
+                        label=f"Download {output_name}",
                         data=f,
                         file_name=output_name,
                         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
