@@ -51,7 +51,7 @@ def run_app():
     if "submit_refs_cvs" not in st.session_state:
         st.session_state["submit_refs_cvs"] = False
 
-    if st.button("🚀 Submit", key="submit_refs_cvs_btn"):
+    if st.button("Submit", key="submit_refs_cvs_btn"):
         st.session_state["submit_refs_cvs"] = True
 
     if st.session_state["submit_refs_cvs"] and ao_title and not st.session_state.get("already_processed", False):
@@ -141,7 +141,7 @@ def run_app():
         st.session_state["already_processed"] = True
     if st.session_state["ref_result"]:
         st.download_button(
-            f"📥 Download Adapted References: {st.session_state['ref_result']['original']}",
+            f"Download Adapted References: {st.session_state['ref_result']['original']}",
             data=st.session_state["ref_result"]["data"],
             file_name=st.session_state["ref_result"]["name"],
             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -149,7 +149,7 @@ def run_app():
 
     for result in st.session_state["resume_results"]:
         st.download_button(
-            f"📥 Download Adapted Resume: {result['original']}",
+            f"Download Adapted Resume: {result['original']}",
             data=result["data"],
             file_name=result["name"],
             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
