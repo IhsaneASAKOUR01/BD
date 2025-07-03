@@ -9,48 +9,67 @@ from deep_translator import GoogleTranslator
 
 st.markdown("""
     <style>
-    /* Centered title */
-    .custom-title {
+    .main .block-container {
+        padding-top: 2rem;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    /* TITLE */
+    .ref-title {
         text-align: center;
-        font-size: 2.8rem;
+        font-size: 3.2rem;
         font-weight: 700;
         color: #1d3557;
-        margin-top: 1rem;
-        margin-bottom: 0.2rem;
-        font-family: 'Comic Neue', cursive;
-    }
-    .custom-desc {
-        text-align: center;
-        font-size: 1.1rem;
-        color: #6c757d;
-        margin-bottom: 2rem;
+        font-family: 'Segoe UI', sans-serif;
+        margin-bottom: 0.5rem;
     }
 
-    /* Upload box */
+    /* UPLOAD BOX */
     section[data-testid="stFileUploader"] {
         background: #f1f3f5;
-        padding: 1rem;
-        border-radius: 10px;
+        padding: 1.2rem 1rem;
         border: 1px solid #ced4da;
+        border-radius: 10px;
         margin-bottom: 2rem;
     }
 
-    /* Submit button */
+    /* BUTTON */
     button[kind="primary"] {
+        background-color: #1d3557;
+        color: #fff;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+    }
+
+    button[kind="primary"]:hover {
+        background-color: #2c5282;
+        box-shadow: 0 0 6px rgba(29, 53, 87, 0.4);
+        transform: scale(1.02);
+    }
+
+    /* DOWNLOAD BUTTON */
+    .stDownloadButton > button {
         background-color: #339af0;
         color: white;
         border: none;
-        border-radius: 8px;
-        padding: 0.6rem 1.2rem;
-        font-weight: 600;
-        transition: all 0.2s ease-in-out;
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
     }
-    button[kind="primary"]:hover {
-        background-color: #1c7ed6;
-        box-shadow: 0 0 6px rgba(51, 154, 240, 0.6);
+    .stDownloadButton > button:hover {
+        background-color: #1971c2;
+        transform: scale(1.02);
     }
     </style>
 """, unsafe_allow_html=True)
+
+st.markdown("<div class='ref-title'>Reference Generator</div>", unsafe_allow_html=True)
+
 
 def run_app():
     st.markdown("<div class='custom-title'>Reference Generator</div>", unsafe_allow_html=True)
