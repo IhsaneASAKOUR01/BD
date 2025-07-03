@@ -43,7 +43,7 @@ st.markdown("""
         display: block;
         margin: 2rem auto 1rem auto;
         width: 180px;
-        margin-buttom: 20px;
+        margin-bottom: 20px;
     }
     
     /* Title */
