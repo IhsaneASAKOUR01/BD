@@ -42,10 +42,10 @@ st.markdown("""
     [data-testid="stSidebar"] img {
         display: block;
         width: 180px;
-        margin-left: 8rem;
+        margin-left: 2rem;
         margin-right: auto;
         margin-top: 1rem;
-        margin-bottom: 80px;
+        margin-bottom: 30px;
     }
     
     /* Title */
