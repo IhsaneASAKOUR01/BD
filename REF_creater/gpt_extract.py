@@ -2,6 +2,8 @@ import openai
 import time
 import json
 from openai import RateLimitError
+import streamlit as st
+
 
 openai.api_key = st.secrets["openai"]["api_key"]
 
