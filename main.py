@@ -15,6 +15,17 @@ st.markdown("""
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <style>
+    /* Limit main content width */
+    .main .block-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    html, body, .stApp {
+    font-size: 15px;
+    }
+
     /* Sidebar background */
     [data-testid="stSidebar"] {
         background-color: #f8f9fa !important;
