@@ -17,6 +17,8 @@ from .resume_adapter import (
     write_filtered_projects
 )
 
+openai.api_key = st.secrets["openai"]["api_key"]
+
 
 @st.cache_data(show_spinner=False)
 def cached_adaptation(sections_list, ao_title):
