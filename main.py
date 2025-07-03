@@ -9,16 +9,17 @@ st.set_page_config(
     layout="wide"
 )
 
-# === STYLE ===
+# === STYLES ===
 st.markdown("""
     <style>
-    /* Sidebar width */
+    /* Sidebar background */
     [data-testid="stSidebar"] {
+        background-color: #f8f9fa !important;
         min-width: 300px;
         width: 300px;
     }
 
-    /* Logo styling */
+    /* Sidebar logo */
     [data-testid="stSidebar"] img {
         display: block;
         margin: 1.5rem auto 2rem auto;
@@ -40,7 +41,7 @@ st.markdown("""
         font-size: 1.1rem;
     }
 
-    /* Radio container styling */
+    /* Radio layout */
     .stRadio div[role=radiogroup] > label {
         background: #fff;
         padding: 0.5rem 1rem;
@@ -51,7 +52,6 @@ st.markdown("""
         display: flex;
         align-items: center;
         gap: 10px;
-        box-shadow: none;
     }
     .stRadio div[role=radiogroup] > label:hover {
         background-color: #eaf4ff;
@@ -59,24 +59,18 @@ st.markdown("""
         cursor: pointer;
     }
 
-    /* Blue dot for radio */
+    /* Blue dot */
     .stRadio input[type="radio"] {
         accent-color: #339af0;
     }
 
-    /* Apply selection effect to whole label */
+    /* Selected effect */
     .stRadio div[role=radiogroup] > label:has(input[type="radio"]:checked) {
         background-color: #eaf4ff;
         border: 1px solid #339af0;
         box-shadow: 0 0 4px rgba(51, 154, 240, 0.5);
         font-weight: 600;
         color: #222;
-    }
-
-    /* Remove focus ring */
-    .stRadio input[type="radio"]:focus {
-        outline: none;
-        box-shadow: none;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -96,7 +90,7 @@ st.markdown("<div class='centered-title'>AO Tools Dashboard</div>", unsafe_allow
 st.markdown("<div class='subtitle'>Smart automation tools for project references & resumes</div>", unsafe_allow_html=True)
 st.markdown("---")
 
-# === MAIN APP ===
+# === MAIN ===
 if choice == "CVs & REFs Adapter":
     st.subheader("CVs & REFs Adapter")
     st.write("Extract, align and enhance CVs & reference docs per AO instructions.")
