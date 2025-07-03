@@ -1,5 +1,7 @@
 import openai
 
+openai.api_key = st.secrets["openai"]["api_key"]
+
 
 def semantic_map_sections(resume_sections, template_text):
     """
