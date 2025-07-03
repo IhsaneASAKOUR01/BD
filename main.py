@@ -45,7 +45,7 @@ st.markdown("""
         margin-left: 2rem;
         margin-right: auto;
         margin-top: 1rem;
-        margin-bottom: 8rem;
+        margin-bottom: 4rem;
     }
     
     /* Title */
