@@ -60,9 +60,11 @@ st.markdown("""
     }
 
     /* Blue dot */
-    .stRadio input[type="radio"] {
-        accent-color: #339af0;
+    /* Make the actual dot inside the radio blue */
+    .stRadio input[type="radio"] + div svg {
+        fill: #339af0 !important;
     }
+
 
     /* Selected effect */
     .stRadio div[role=radiogroup] > label:has(input[type="radio"]:checked) {
