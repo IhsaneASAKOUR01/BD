@@ -69,21 +69,6 @@ html, body, .stApp {
     box-shadow: 0 0 10px rgba(116, 0, 184, 0.3);
 }
 
-.upload-box {
-    background-color: #ffffff;
-    border: 2px dashed #5e60ce;
-    border-radius: 16px;
-    padding: 2.5rem;
-    margin: 2rem auto;
-    max-width: 600px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    color: #5e60ce;
-    text-align: center;
-}
-
-.upload-box:hover {
-    box-shadow: 0 0 12px rgba(94, 96, 206, 0.3);
-}
 
 .stButton > button {
   background-color: #5e60ce;
