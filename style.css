@@ -1,11 +1,11 @@
 body::before {
-    content: "✅ CSS LOADED" !important;
-    color: red !important;
-    position: absolute !important;
-    top: 10px !important;
-    left: 10px !important;
-    z-index: 9999 !important;
-    font-size: 20px !important;
+    content: "✅ CSS LOADED" ;
+    color: red;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    font-size: 20px;
 }
 
 h2 {
