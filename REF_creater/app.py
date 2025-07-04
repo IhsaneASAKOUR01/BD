@@ -12,10 +12,11 @@ def load_css():
     with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css()
+
 
 
 def run_app():
+    load_css()
     if "field_values" not in st.session_state:
         st.session_state["field_values"] = None
     if "output_path_fr" not in st.session_state:
