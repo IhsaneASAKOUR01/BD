@@ -12,8 +12,10 @@ st.markdown("""
 
 <style>
 html, body, .stApp {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f4f8;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    zoom: 0.85 !important;
+    background-color: #f0f4f8v;
 }
 
 .custom-title {
