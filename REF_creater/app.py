@@ -17,7 +17,6 @@ def load_css():
 
 def run_app():
     load_css()
-    st.markdown("<h1 class='ref-title'>THIS IS A TEST FOR REF TOOL </h1>", unsafe_allow_html=True)
     if "field_values" not in st.session_state:
         st.session_state["field_values"] = None
     if "output_path_fr" not in st.session_state:
@@ -25,10 +24,17 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
+    st.markdown("""
+    <div class='upload-section'>
+        <label>Select a report file</label>
+    </div>
+    """, unsafe_allow_html=True)
+    
     uploaded_report = st.file_uploader(
-        "Upload Project Report (.docx, .pdf, .pptx, .txt)", 
+        "Upload Project Report",
         type=["docx", "pdf", "pptx", "txt"]
     )
+
     submit = st.button("Submit", key="submit_ref_creator")
 
     # ✅ Reset the generation if a different file is uploaded
