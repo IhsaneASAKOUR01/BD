@@ -84,10 +84,12 @@ st.markdown("""
         box-shadow: 0 0 4px rgba(51, 154, 240, 0.5) !important;
         font-weight: 600 !important;
         color: #222 !important;
+        
     /* Label above radio (e.g., "Choose a tool") */
+    
     .stRadio > label {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
+        font-size: 4rem !important;
+        margin-bottom: "rem !important;
     }
     }
     </style>
@@ -106,7 +108,7 @@ with st.sidebar:
 # === HEADER ===
 st.markdown("<div class='centered-title'>BD Tools Dashboard</div>", unsafe_allow_html=True)
 st.markdown("<div class='subtitle'>Smart automation tools for project references & resumes</div>", unsafe_allow_html=True)
-#st.markdown("---")
+st.markdown("---")
 
 # === MAIN ===
 if choice == "CVs & REFs Adapter":
