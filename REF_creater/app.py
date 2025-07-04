@@ -22,16 +22,6 @@ def load_css():
 
 def run_app():
     load_css()
-    # HIDE default uploader completely
-    st.markdown("""
-        <style>
-        [data-testid="stFileUploader"] {
-            display: none;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-
     # Init session state
     if "field_values" not in st.session_state:
         st.session_state["field_values"] = None
@@ -40,49 +30,13 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
-    # Inject uploader and JavaScript trigger
-    st.markdown("""
-    <style>
-    #upload_trigger {
-        border: 2px dashed #5e60ce;
-        background: white;
-        border-radius: 16px;
-        padding: 3rem;
-        text-align: center;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #5e60ce;
-        max-width: 600px;
-        margin: 3rem auto;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-    }
-    #upload_trigger:hover {
-        background: #f0f0ff;
-        box-shadow: 0 0 12px rgba(94, 96, 206, 0.3);
-    }
-    </style>
-    
-    <div id="upload_trigger">
-    📄 Click here to upload your project report
-    </div>
-    
-    <script>
-    document.getElementById("upload_trigger").addEventListener("click", function() {
-        document.querySelector('[data-testid="stFileUploadDropzone"]').click();
-    });
-    </script>
-    """, unsafe_allow_html=True)
-    
     uploaded_report = st.file_uploader(
-        label="Upload your project",
-        type=["docx", "pdf", "pptx", "txt"],
-        label_visibility="collapsed"
+        "📄 Upload your project report",
+        type=["docx", "pdf", "pptx", "txt"]
     )
-    
+   
     st.markdown('<div class="big-button">', unsafe_allow_html=True)
-    submit = st.button("🚀 Generate Reference")
+    submit = st.button("Submit")
     st.markdown('</div>', unsafe_allow_html=True)
 
 
