@@ -54,35 +54,36 @@ html, body, .stApp {
 }
 
 .stButton > button {
-  background-color: #5e60ce;
-  color: white;
-  padding: 0.6rem 1.5rem;
-  border-radius: 10px;
-  font-weight: 500;
-  border: none;
-  margin-top: 1rem;
-  cursor: pointer;
-  font-size: 0.95rem;
+  background-color: #5e60ce !important;
+  color: white !important !important;
+  padding: 0.6rem 1.5rem !important;
+  border-radius: 10px !important;
+  font-weight: 500 !important;
+  border: none !important;
+  margin-top: 1rem !important;
+  cursor: pointer !important;
+  font-size: 0.95rem !important;
 }
 
 
 .stButton > button:hover {
     transform: scale(1.03);
     box-shadow: 0 0 10px rgba(116, 0, 184, 0.3);
+    color: white !important;
 }
 
 .download-button button {
-  background-color: #e0e0ff;
-  color: #333;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  border: 1px solid #5e60ce;
-  margin-top: 0.5rem;
-  cursor: pointer;
+  background-color: #e0e0ff !important;
+  color: #333 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  border: 1px solid #5e60ce !important;
+  margin-top: 0.5rem !important;
+  cursor: pointer !important;
 }
 .download-button button:hover {
-  background-color: #d6d6ff;
-  border-color: #3b3d9f;
+  background-color: #d6d6ff !important;
+  border-color: #3b3d9f !important;
 }
 
