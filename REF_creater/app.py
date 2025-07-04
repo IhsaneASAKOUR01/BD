@@ -17,6 +17,8 @@ def load_css():
 
 def run_app():
     load_css()
+
+    # Init session state
     if "field_values" not in st.session_state:
         st.session_state["field_values"] = None
     if "output_path_fr" not in st.session_state:
@@ -24,6 +26,7 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
+    # UI block (not nested inside any if)
     st.markdown("<div class='upload-section'>", unsafe_allow_html=True)
 
     uploaded_report = st.file_uploader(
@@ -35,6 +38,7 @@ def run_app():
     submit = st.button("Submit", key="submit_ref_creator")
 
     st.markdown("</div>", unsafe_allow_html=True)
+
 
 
     # ✅ Reset the generation if a different file is uploaded
