@@ -16,7 +16,7 @@ st.markdown("""
         font-family: 'Poppins', sans-serif !important;
         font-size: 13px !important;
         zoom: 0.9 !important;
-        background-color: #f0f0ff !important;
+        background-color: #f8f9fa !important;
     }
     .main .block-container {
         max-width: 900px !important;
@@ -27,7 +27,7 @@ st.markdown("""
     
     /* Sidebar size + border */
     [data-testid="stSidebar"] {
-        background-color: #f8f9fa !important;
+        background-color: #f0f0ff !important;
         width: 300px !important;
         min-width: 300px !important;
         border-right: 2px solid #dee2e6 !important;
