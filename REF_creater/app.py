@@ -31,13 +31,25 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
-    st.markdown('<div class="upload-box">', unsafe_allow_html=True)
-    uploaded_report = st.file_uploader(
-        "📄 Upload your project report",
-        type=["docx", "pdf", "pptx", "txt"]
-    )
-
-    submit = st.button("Submit")
+    with st.container():
+        st.markdown('<div class="upload-box">', unsafe_allow_html=True)
+    
+        uploaded_report = st.file_uploader(
+            "📄 Upload your project report",
+            type=["docx", "pdf", "pptx", "txt"]
+        )
+    
+        submit = st.button("Submit")
+    
+        if st.session_state.get("output_path_fr"):
+            with open(st.session_state["output_path_fr"], "rb") as f:
+                st.download_button("📥 Download French Version", f, file_name=st.session_state["output_path_fr"].name, mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+    
+        if st.session_state.get("output_path_en"):
+            with open(st.session_state["output_path_en"], "rb") as f:
+                st.download_button("📥 Download English Version", f, file_name=st.session_state["output_path_en"].name, mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+    
+        st.markdown('</div>', unsafe_allow_html=True)
 
 
     # ✅ Reset the generation if a different file is uploaded
@@ -103,23 +115,3 @@ def run_app():
             st.session_state["output_path_en"] = path_en
 
         st.session_state["generated"] = True
-
-    # Download buttons
-    if st.session_state["output_path_fr"]:
-        with open(st.session_state["output_path_fr"], "rb") as f:
-            st.download_button(
-                label="📥 Download French Version",
-                data=f,
-                file_name=st.session_state["output_path_fr"].name,
-                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            )
-
-    if st.session_state["output_path_en"]:
-        with open(st.session_state["output_path_en"], "rb") as f:
-            st.download_button(
-                label="📥 Download English Version",
-                data=f,
-                file_name=st.session_state["output_path_en"].name,
-                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            )
-    st.markdown('</div>', unsafe_allow_html=True)
