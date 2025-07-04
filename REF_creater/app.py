@@ -7,11 +7,13 @@ from .template_filler import fill_reference_table, fill_template_with_debug
 from .utils import load_report_text
 from deep_translator import GoogleTranslator
 
-def load_css(path: str):
-    with open(path) as f:
+def load_css():
+    css_path = Path(__file__).resolve().parent.parent / "style.css"
+    with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css("../style.css")
+load_css()
+
 
 def run_app():
     if "field_values" not in st.session_state:
