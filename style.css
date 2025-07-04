@@ -75,5 +75,59 @@ html, body, .stApp {
   color: white !important;
 }
 
+[data-testid="stFileUploader"] {
+    background-color: #ffffff !important;
+    border: 2px dashed #5e60ce !important;
+    border-radius: 16px !important;
+    padding: 2.5rem !important;
+    margin: 2rem auto !important;
+    max-width: 900px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    color: #5e60ce !important;
+    text-align: center !important;
+    font-size: 1.1rem !important;
+}
+[data-testid="stFileUploader"]:hover {
+    box-shadow: 0 0 12px rgba(94, 96, 206, 0.3) !important;
+}
 
+.stButton {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.stButton > button {
+  background-color: #5e60ce !important;
+  color: white !important;
+  padding: 0.8rem 3rem !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  border: none !important;
+  margin-top: 1rem !important;
+  cursor: pointer !important;
+  min-width: 220px !important;
+}
+
+.stButton > button:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 0 10px rgba(116, 0, 184, 0.3) !important;
+  color: white !important;
+}
+
+
+.download-button button {
+  background-color: #e0e0ff !important;
+  color: #333 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  border: 1px solid #5e60ce !important;
+  margin-top: 0.5rem !important;
+  cursor: pointer !important;
+}
+.download-button button:hover {
+  background-color: #d6d6ff !important;
+  border-color: #3b3d9f !important;
+}
 
