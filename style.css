@@ -1,4 +1,13 @@
-/* Gradient section title */
+body::before {
+    content: "✅ CSS LOADED";
+    color: red;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    font-size: 20px;
+}
+
 h2 {
     background: linear-gradient(90deg, #5e60ce, #7400b8);
     -webkit-background-clip: text;
