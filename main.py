@@ -36,10 +36,9 @@ st.markdown("""
     /* Logo */
     [data-testid="stSidebar"] img {
         display: block !important;
-        width: 195px !important;
+        width: 210px !important;
         margin-left: 2rem !important;
         margin-right: auto !important;
-        margin-top: 1rem !important;
         margin-bottom: 4rem !important;
     }
     
@@ -87,7 +86,7 @@ st.markdown("""
         color: #222 !important;
     /* Label above radio (e.g., "Choose a tool") */
     .stRadio > label {
-        font-size: 1.2rem !important;
+        font-size: 2rem !important;
         margin-bottom: 1rem !important;
     }
     }
