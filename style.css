@@ -70,3 +70,21 @@ button[data-testid="baseButton"]:hover {
     box-shadow: 0 0 10px rgba(116, 0, 184, 0.6);
 }
 
+button[data-testid="baseButton"] {
+    background: linear-gradient(135deg, #5e60ce, #7400b8) !important;
+    color: white !important;
+    padding: 1rem 2rem !important;
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease-in-out !important;
+    cursor: pointer !important;
+    border: none !important;
+    margin-top: 1rem !important;
+    text-align: center !important;
+}
+
+button[data-testid="baseButton"]:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 10px rgba(116, 0, 184, 0.6) !important;
+}
