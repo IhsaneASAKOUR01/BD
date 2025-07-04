@@ -9,6 +9,8 @@ from .utils import load_report_text
 from deep_translator import GoogleTranslator
 import streamlit.components.v1 as components
 from streamlit_extras.stylable_container import stylable_container
+import streamlit.components.v1 as components
+import base64
 
 def load_css():
     css_path = Path(__file__).resolve().parent.parent / "style.css"
@@ -20,6 +22,15 @@ def load_css():
 
 def run_app():
     load_css()
+    # HIDE default uploader completely
+    st.markdown("""
+        <style>
+        [data-testid="stFileUploader"] {
+            display: none;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
 
     # Init session state
     if "field_values" not in st.session_state:
@@ -29,29 +40,33 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
+    # --- CUSTOM UPLOAD UI ---
     st.markdown("""
     <style>
-    .custom-dropzone {
+    .upload-box {
         border: 2px dashed #5e60ce;
-        background-color: #ffffff;
         border-radius: 16px;
         padding: 3rem;
         text-align: center;
+        background: #ffffff;
+        margin: 2rem auto;
         max-width: 600px;
-        margin: 3rem auto 1rem auto;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: 0.3s ease all;
+        cursor: pointer;
         font-size: 1.2rem;
         font-weight: 600;
         color: #5e60ce;
-        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: 0.3s ease;
     }
-    .custom-dropzone:hover {
-        background-color: #f0f0ff;
+    .upload-box:hover {
+        background: #f0f0ff;
         box-shadow: 0 0 12px rgba(94, 96, 206, 0.3);
     }
-    .hidden-upload {
-        display: none;
+    .real-upload {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        position: absolute;
     }
     .big-button .stButton>button {
         width: 100%;
@@ -68,27 +83,24 @@ def run_app():
         box-shadow: 0 0 10px rgba(116, 0, 184, 0.3);
     }
     </style>
-    
-    <div class="custom-dropzone" onclick="document.getElementById('upload_real').click()">
-        📄 Click to upload your project report
-    </div>
     """, unsafe_allow_html=True)
     
-    uploaded_report = st.file_uploader(
-        label="",
-        type=["docx", "pdf", "pptx", "txt"],
-        label_visibility="collapsed",
-        key="upload_real"
-    )
+    uploaded_report = st.file_uploader("Upload your file", type=["docx", "pdf", "pptx", "txt"], key="real-upload")
+    
+    st.markdown(f"""
+    <label for="real-upload">
+        <div class="upload-box">
+            📄 Click here to upload your project report
+        </div>
+    </label>
+    """, unsafe_allow_html=True)
     
     if uploaded_report:
-        st.success(f"✅ `{uploaded_report.name}` uploaded!", icon="📎")
+        st.success(f"✅ Uploaded: `{uploaded_report.name}`", icon="📎")
     
-    with st.container():
-        with st.container():
-            st.markdown('<div class="big-button">', unsafe_allow_html=True)
-            submit = st.button("🚀 Generate Reference")
-            st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('<div class="big-button">', unsafe_allow_html=True)
+    submit = st.button("🚀 Generate Reference")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
 
