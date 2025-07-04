@@ -27,46 +27,59 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
+    # Upload form section
     st.markdown("""
     <style>
-    .custom-upload-box {
+    .upload-form {
+        background-color: #ffffff;
         border: 2px dashed #5e60ce;
-        background-color: #fff;
         border-radius: 16px;
-        padding: 3rem;
+        padding: 2.5rem;
         text-align: center;
-        font-size: 1.2rem;
-        font-weight: 600;
+        max-width: 600px;
+        margin: 3rem auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .upload-form:hover {
+        box-shadow: 0 0 12px rgba(94, 96, 206, 0.2);
+    }
+    .upload-form h3 {
+        margin-bottom: 1.5rem;
         color: #5e60ce;
+        font-size: 1.5rem;
+    }
+    .stButton button {
+        background: linear-gradient(135deg, #5e60ce, #7400b8);
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
         cursor: pointer;
-        transition: all 0.3s ease;
-        max-width: 500px;
-        margin: 3rem auto 2rem auto;
+        transition: 0.3s ease all;
     }
-    .custom-upload-box:hover {
-        background-color: #f0f0ff;
-        box-shadow: 0 0 10px rgba(94, 96, 206, 0.3);
-    }
-    input[type="file"] {
-        display: none;
+    .stButton button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(116, 0, 184, 0.3);
     }
     </style>
     
-    <label for="file-input">
-        <div class="custom-upload-box">
-            📄 Click or drag a file here to upload your project report
-        </div>
-    </label>
+    <div class="upload-form">
+        <h3>📄 Upload Your Project Report</h3>
     """, unsafe_allow_html=True)
     
     uploaded_report = st.file_uploader(
         label="",
         type=["docx", "pdf", "pptx", "txt"],
-        label_visibility="collapsed",
-        key="file-input"
+        label_visibility="collapsed"
     )
     
     submit = st.button("🚀 Submit", key="submit_ref_creator")
+    
+    st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
