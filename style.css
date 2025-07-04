@@ -43,7 +43,7 @@ html, body, .stApp {
     border-radius: 16px;
     padding: 2.5rem;
     margin: 2rem auto;
-    max-width: 600px;
+    max-width: 900px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     color: #5e60ce;
     text-align: center;
@@ -52,23 +52,6 @@ html, body, .stApp {
 [data-testid="stFileUploader"]:hover {
     box-shadow: 0 0 12px rgba(94, 96, 206, 0.3);
 }
-.stButton>button big-button {
-    background: linear-gradient(135deg, #5e60ce, #7400b8);
-    color: white;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease all;
-    margin-top: 1rem;
-}
-.stButton>button:hover big-button {
-    transform: scale(1.03);
-    box-shadow: 0 0 10px rgba(116, 0, 184, 0.3);
-}
-
 
 .stButton > button {
   background-color: #5e60ce;
