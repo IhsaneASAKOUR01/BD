@@ -26,17 +26,40 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
-    st.markdown("<div class='upload-section'>", unsafe_allow_html=True)
+    with st.container():
+        st.markdown(
+            """
+            <style>
+            .block-container {
+                max-width: 800px !important;
+                margin: auto !important;
+            }
+            .custom-upload {
+                background: #fff;
+                border: 2px dashed #5e60ce;
+                padding: 2rem;
+                border-radius: 16px;
+                text-align: center;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                margin-top: 2rem;
+            }
+            </style>
+            <div class="custom-upload">
+                <h3 style='margin-bottom: 1rem;'>Upload Your Project Report</h3>
+            """,
+            unsafe_allow_html=True
+        )
     
-    uploaded_report = st.file_uploader(
-        "Upload Project Report (.docx, .pdf, .pptx, .txt)", 
-        type=["docx", "pdf", "pptx", "txt"],
-        label_visibility="collapsed"
-    )
+        uploaded_report = st.file_uploader(
+            "",  # no label
+            type=["docx", "pdf", "pptx", "txt"],
+            label_visibility="collapsed"
+        )
     
-    submit = st.button("🚀 Submit", key="submit_ref_creator")
+        submit = st.button("🚀 Submit", key="submit_ref_creator")
     
-    st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
