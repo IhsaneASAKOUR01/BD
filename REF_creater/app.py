@@ -7,6 +7,7 @@ from .template_filler import fill_reference_table, fill_template_with_debug
 from .utils import load_report_text
 from deep_translator import GoogleTranslator
 import streamlit.components.v1 as components
+from streamlit_extras.stylable_container import stylable_container
 
 def load_css():
     css_path = Path(__file__).resolve().parent.parent / "style.css"
@@ -27,58 +28,31 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
-    # Upload form section
-    st.markdown("""
-    <style>
-    .upload-form {
-        background-color: #ffffff;
+    with stylable_container(
+        key="custom_uploader",
+        css_styles="""
         border: 2px dashed #5e60ce;
         border-radius: 16px;
-        padding: 2.5rem;
+        padding: 2rem;
+        background: white;
         text-align: center;
-        max-width: 600px;
         margin: 3rem auto;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-    .upload-form:hover {
-        box-shadow: 0 0 12px rgba(94, 96, 206, 0.2);
-    }
-    .upload-form h3 {
-        margin-bottom: 1.5rem;
-        color: #5e60ce;
-        font-size: 1.5rem;
-    }
-    .stButton button {
-        background: linear-gradient(135deg, #5e60ce, #7400b8);
-        color: white;
-        border: none;
-        padding: 0.75rem 2rem;
-        border-radius: 12px;
-        font-size: 1rem;
-        font-weight: 600;
-        margin-top: 1.5rem;
-        cursor: pointer;
-        transition: 0.3s ease all;
-    }
-    .stButton button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px rgba(116, 0, 184, 0.3);
-    }
-    </style>
+        max-width: 600px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        """,
+    ):
+        st.markdown("### 📄 Upload Your Project Report", unsafe_allow_html=True)
     
-    <div class="upload-form">
-        <h3>📄 Upload Your Project Report</h3>
-    """, unsafe_allow_html=True)
+        uploaded_report = st.file_uploader(
+            label="",
+            type=["docx", "pdf", "pptx", "txt"],
+            label_visibility="collapsed"
+        )
     
-    uploaded_report = st.file_uploader(
-        label="",
-        type=["docx", "pdf", "pptx", "txt"],
-        label_visibility="collapsed"
-    )
+        if uploaded_report:
+            st.success(f"✅ File uploaded: `{uploaded_report.name}`", icon="📎")
     
-    submit = st.button("🚀 Submit", key="submit_ref_creator")
-    
-    st.markdown("</div>", unsafe_allow_html=True)
+        submit = st.button("🚀 Generate Reference", use_container_width=True)
 
 
 
