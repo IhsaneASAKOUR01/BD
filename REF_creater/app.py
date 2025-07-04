@@ -26,11 +26,18 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
+    st.markdown("<div class='upload-section'>", unsafe_allow_html=True)
+    
     uploaded_report = st.file_uploader(
         "Upload Project Report (.docx, .pdf, .pptx, .txt)", 
-        type=["docx", "pdf", "pptx", "txt"]
+        type=["docx", "pdf", "pptx", "txt"],
+        label_visibility="collapsed"
     )
+    
     submit = st.button("🚀 Submit", key="submit_ref_creator")
+    
+    st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
