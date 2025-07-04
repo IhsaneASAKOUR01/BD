@@ -8,8 +8,6 @@ from .docx_generator import fill_docx_template_by_labels
 import os
 
 def run_app():
-    st.title("CV Section Extractor & Mapper")
-
     uploaded_resumes = st.file_uploader("Upload Resume(s) (.docx)", type=["docx"], accept_multiple_files=True)
     uploaded_template = st.file_uploader("Upload Template (.docx)", type=["docx"])
     submit = st.button("Submit", key="submit_cv_adapter")
