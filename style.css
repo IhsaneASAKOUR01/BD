@@ -44,7 +44,8 @@ html, body, .stApp {
 
 [data-testid="stTextInput"] {
   background-color: #ffffff !important;
-  border: 1px solid #5e60ce !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border: 0.5px solid #5e60ce !important;
   border-radius: 10px !important;
   padding: 1.8rem 1rem !important;
   font-size: 3rem !important;
@@ -62,7 +63,8 @@ html, body, .stApp {
 
 [data-testid="stFileUploader"] {
     background-color: #ffffff !important;
-    border: 1px solid #5e60ce !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    border: 0.5px solid #5e60ce !important;
     border-radius: 16px !important;
     padding: 1.8rem !important;
     margin: 0 auto !important; 
