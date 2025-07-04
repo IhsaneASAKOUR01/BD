@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_js_eval import streamlit_js_eval
 from pathlib import Path
 import tempfile
 from docx import Document
@@ -28,31 +29,66 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
-    with stylable_container(
-        key="custom_uploader",
-        css_styles="""
+    st.markdown("""
+    <style>
+    .custom-dropzone {
         border: 2px dashed #5e60ce;
+        background-color: #ffffff;
         border-radius: 16px;
-        padding: 2rem;
-        background: white;
+        padding: 3rem;
         text-align: center;
-        margin: 3rem auto;
         max-width: 600px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        """,
-    ):
-        st.markdown("### 📄 Upload Your Project Report", unsafe_allow_html=True)
+        margin: 3rem auto 1rem auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: 0.3s ease all;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #5e60ce;
+        cursor: pointer;
+    }
+    .custom-dropzone:hover {
+        background-color: #f0f0ff;
+        box-shadow: 0 0 12px rgba(94, 96, 206, 0.3);
+    }
+    .hidden-upload {
+        display: none;
+    }
+    .big-button .stButton>button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #5e60ce, #7400b8);
+        color: white;
+        border: none;
+    }
+    .big-button .stButton>button:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 10px rgba(116, 0, 184, 0.3);
+    }
+    </style>
     
-        uploaded_report = st.file_uploader(
-            label="",
-            type=["docx", "pdf", "pptx", "txt"],
-            label_visibility="collapsed"
-        )
+    <div class="custom-dropzone" onclick="document.getElementById('upload_real').click()">
+        📄 Click to upload your project report
+    </div>
+    """, unsafe_allow_html=True)
     
-        if uploaded_report:
-            st.success(f"✅ File uploaded: `{uploaded_report.name}`", icon="📎")
+    uploaded_report = st.file_uploader(
+        label="",
+        type=["docx", "pdf", "pptx", "txt"],
+        label_visibility="collapsed",
+        key="upload_real"
+    )
     
-        submit = st.button("🚀 Generate Reference", use_container_width=True)
+    if uploaded_report:
+        st.success(f"✅ `{uploaded_report.name}` uploaded!", icon="📎")
+    
+    with st.container():
+        with st.container():
+            st.markdown('<div class="big-button">', unsafe_allow_html=True)
+            submit = st.button("🚀 Generate Reference")
+            st.markdown('</div>', unsafe_allow_html=True)
 
 
 
