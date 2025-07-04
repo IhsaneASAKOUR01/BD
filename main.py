@@ -87,9 +87,9 @@ st.markdown("""
         
     /* Label above radio (e.g., "Choose a tool") */
     
-    .stRadio > label {
-        font-size: 4rem !important;
-        margin-bottom: "rem !important;
+    .class="st-emotion-cache-1oa0vvv e1g8wfdw0" {
+        font-size: 2rem !important;
+        margin-bottom: 2rem !important;
     }
     }
     </style>
