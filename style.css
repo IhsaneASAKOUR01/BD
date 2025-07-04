@@ -52,19 +52,21 @@ html, body, .stApp {
     font-size: 1rem;
 }
 
-.custom-btn {
+button[data-testid="baseButton"] {
     background: linear-gradient(135deg, #5e60ce, #7400b8);
     color: white;
-    border: none;
     padding: 1rem 2rem;
     font-size: 1.2rem;
     font-weight: bold;
     border-radius: 12px;
-    cursor: pointer;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+    margin-top: 1rem;
 }
 
-.custom-btn:hover {
+button[data-testid="baseButton"]:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(116, 0, 184, 0.6);
 }
+
