@@ -16,75 +16,75 @@ st.markdown("""
         font-family: 'Poppins', sans-serif !important;
         font-size: 13px !important;
         zoom: 0.85 !important;
-        background-color: #f0f4f8v;
+        background-color: #f0f4f8v !important;
     }
     .main .block-container {
-        max-width: 900px;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        margin: auto;
+        max-width: 900px !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin: auto !important;
     }
     
     /* Sidebar size + border */
     [data-testid="stSidebar"] {
         background-color: #f8f9fa !important;
-        width: 300px;
-        min-width: 300px;
-        border-right: 2px solid #dee2e6;
+        width: 300px !important;
+        min-width: 300px !important;
+        border-right: 2px solid #dee2e6 !important;
     }
     
     /* Logo */
     [data-testid="stSidebar"] img {
-        display: block;
-        width: 180px;
-        margin-left: 2rem;
-        margin-right: auto;
-        margin-top: 1rem;
-        margin-bottom: 4rem;
+        display: block !important;
+        width: 180px !important;
+        margin-left: 2rem !important;
+        margin-right: auto !important;
+        margin-top: 1rem !important;
+        margin-bottom: 4rem !important;
     }
     
     /* Title */
     .centered-title {
-        text-align: center;
-        font-size: 4rem;
-        font-weight: 800;
-        color: #1d3557;
-        margin-bottom: 0.2rem;
-        font-family: 'Comic Neue', cursive;
+        text-align: center !important;
+        font-size: 4rem !important;
+        font-weight: 800 !important;
+        color: #1d3557 !important;
+        margin-bottom: 0.2rem !important;
+        font-family: 'Comic Neue', cursive !important;
     }
     .subtitle {
-        text-align: center;
-        color: #6c757d;
-        margin-bottom: 2rem;
-        font-size: 1rem;
+        text-align: center !important;
+        color: #6c757d !important;
+        margin-bottom: 2rem !important;
+        font-size: 1rem !important;
     }
     
     /* Radio buttons */
     .stRadio div[role=radiogroup] > label {
-        background: #fff;
-        padding: 0.5rem 1rem;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        margin-bottom: 0.5rem;
-        transition: all 0.2s ease-in-out;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        background: #fff !important;
+        padding: 0.5rem 1rem !important;
+        border: 1px solid #ddd !important;
+        border-radius: 10px !important;
+        margin-bottom: 0.5rem !important;
+        transition: all 0.2s ease-in-out !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
     }
     .stRadio div[role=radiogroup] > label:hover {
-        background-color: #eaf4ff;
-        border: 1px solid #339af0;
-        cursor: pointer;
+        background-color: #eaf4ff !important;
+        border: 1px solid #339af0 !important;
+        cursor: pointer !important;
     }
     .stRadio input[type="radio"] + div svg {
         fill: #339af0 !important;
     }
     .stRadio div[role=radiogroup] > label:has(input[type="radio"]:checked) {
-        background-color: #eaf4ff;
-        border: 1px solid #339af0;
-        box-shadow: 0 0 4px rgba(51, 154, 240, 0.5);
-        font-weight: 600;
-        color: #222;
+        background-color: #eaf4ff !important;
+        border: 1px solid #339af0 !important;
+        box-shadow: 0 0 4px rgba(51, 154, 240, 0.5) !important;
+        font-weight: 600 !important;
+        color: #222 !important;
     }
     </style>
 
