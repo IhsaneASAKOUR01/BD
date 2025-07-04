@@ -22,6 +22,7 @@ def load_css():
 
 def run_app():
     load_css()
+
     # Init session state
     if "field_values" not in st.session_state:
         st.session_state["field_values"] = None
@@ -30,72 +31,55 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
+    # Wrap everything in one container
+    st.markdown('<div class="upload-box">', unsafe_allow_html=True)
+
     uploaded_report = st.file_uploader(
         "📄 Upload your project report",
         type=["docx", "pdf", "pptx", "txt"]
     )
-   
-    st.markdown('<div class="big-button">', unsafe_allow_html=True)
-    submit = st.button("Submit")
-    st.markdown('</div>', unsafe_allow_html=True)
 
+    submit = st.button("🚀 Generate Reference")
 
-
-
-
-
-
-    # ✅ Reset the generation if a different file is uploaded
+    # ✅ Reset generation if new file uploaded
     if uploaded_report and "last_uploaded" in st.session_state:
         if uploaded_report.name != st.session_state["last_uploaded"]:
             st.session_state["generated"] = False
 
-    # ✅ Update the uploaded filename in session
     st.session_state["last_uploaded"] = uploaded_report.name if uploaded_report else None
-
     TEMPLATE_PATH = "REF_creater/Référence Template.docx"
 
     def translate_docx(input_path, output_path, target_lang="en"):
         doc = Document(input_path)
-        
         def translate_paragraph(para):
             text = para.text.strip()
             if text:
                 try:
                     translated = GoogleTranslator(source='auto', target=target_lang).translate(text)
-                    # Replace text of first run only
                     if para.runs:
                         para.runs[0].text = translated
                         for i in range(1, len(para.runs)):
                             para.runs[i].text = ""
                 except Exception as e:
                     print("[Translation Error]", e)
-
         for para in doc.paragraphs:
             translate_paragraph(para)
-
         for table in doc.tables:
             for row in table.rows:
                 for cell in row.cells:
                     for para in cell.paragraphs:
                         translate_paragraph(para)
-
         doc.save(output_path)
 
-    # Process only once per upload
     if submit and uploaded_report:
         report_text = load_report_text(uploaded_report)
-
         with st.spinner("Extracting fields with GPT..."):
             st.session_state["field_values"] = fill_template_with_debug(TEMPLATE_PATH, report_text)
 
         with st.spinner("Generating French reference..."):
             filled_doc = fill_reference_table(TEMPLATE_PATH, st.session_state["field_values"])
-
             mission_name = st.session_state["field_values"].get("Nom de la mission", "output").strip()
             mission_name_safe = "".join(c for c in mission_name if c.isalnum() or c in (" ", "_", "-")).rstrip()
-
-            # Save French version
             fr_name = f"{mission_name_safe}_ref_VF.docx"
             path_fr = Path(tempfile.gettempdir()) / fr_name
             filled_doc.save(path_fr)
@@ -109,23 +93,13 @@ def run_app():
 
         st.session_state["generated"] = True
 
-    # Download buttons
     if st.session_state["output_path_fr"]:
         with open(st.session_state["output_path_fr"], "rb") as f:
-            st.download_button(
-                label="📥 Download French Version",
-                data=f,
-                file_name=st.session_state["output_path_fr"].name,
-                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            )
+            st.download_button("📥 Download French Version", f, file_name=st.session_state["output_path_fr"].name)
 
     if st.session_state["output_path_en"]:
         with open(st.session_state["output_path_en"], "rb") as f:
-            st.download_button(
-                label="📥 Download English Version",
-                data=f,
-                file_name=st.session_state["output_path_en"].name,
-                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            )
+            st.download_button("📥 Download English Version", f, file_name=st.session_state["output_path_en"].name)
 
+    st.markdown('</div>', unsafe_allow_html=True)
 
