@@ -36,7 +36,7 @@ st.markdown("""
     /* Logo */
     [data-testid="stSidebar"] img {
         display: block !important;
-        width: 180px !important;
+        width: 195px !important;
         margin-left: 2rem !important;
         margin-right: auto !important;
         margin-top: 1rem !important;
@@ -56,7 +56,7 @@ st.markdown("""
         text-align: center !important;
         color: #6c757d !important;
         margin-bottom: 2rem !important;
-        font-size: 1rem !important;
+        font-size: 1.5rem !important;
     }
     
     /* Radio buttons */
@@ -85,6 +85,11 @@ st.markdown("""
         box-shadow: 0 0 4px rgba(51, 154, 240, 0.5) !important;
         font-weight: 600 !important;
         color: #222 !important;
+    /* Label above radio (e.g., "Choose a tool") */
+    .stRadio > label {
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
+    }
     }
     </style>
 
