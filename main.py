@@ -15,8 +15,8 @@ st.markdown("""
     html, body, .stApp {
         font-family: 'Poppins', sans-serif !important;
         font-size: 13px !important;
-        zoom: 0.85 !important;
-        background-color: #f0f4f8v !important;
+        zoom: 0.9 !important;
+        background-color: #f0f0ff !important;
     }
     .main .block-container {
         max-width: 900px !important;
