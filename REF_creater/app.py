@@ -10,7 +10,6 @@ from .utils import load_report_text
 from deep_translator import GoogleTranslator
 import streamlit.components.v1 as components
 from streamlit_extras.stylable_container import stylable_container
-import streamlit.components.v1 as components
 import base64
 
 def load_css():
@@ -43,11 +42,15 @@ def run_app():
     
         if st.session_state.get("output_path_fr"):
             with open(st.session_state["output_path_fr"], "rb") as f:
+                st.markdown('<div class="download-button">', unsafe_allow_html=True)
                 st.download_button("📥 Download French Version", f, file_name=st.session_state["output_path_fr"].name, mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                st.markdown('</div>', unsafe_allow_html=True)
     
         if st.session_state.get("output_path_en"):
             with open(st.session_state["output_path_en"], "rb") as f:
+                st.markdown('<div class="download-button">', unsafe_allow_html=True)
                 st.download_button("📥 Download English Version", f, file_name=st.session_state["output_path_en"].name, mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                st.markdown('</div>', unsafe_allow_html=True)
     
         st.markdown('</div>', unsafe_allow_html=True)
 
