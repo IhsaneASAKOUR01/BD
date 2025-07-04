@@ -37,6 +37,30 @@ html, body, .stApp {
 }
 
 /*************************************************************************************** app */
+[data-testid="stTextInput"] > div {
+  display: flex;
+  justify-content: center;
+}
+
+[data-testid="stTextInput"] {
+  background-color: #ffffff !important;
+  border: 2px solid #5e60ce !important;
+  border-radius: 10px !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 3rem !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+[data-testid="stTextInput"]:hover {
+  border-color: #7400b8 !important;
+  box-shadow: 0 0 8px rgba(94, 96, 206, 0.2) !important;
+}
+
+
 [data-testid="stFileUploader"] {
     background-color: #ffffff !important;
     border: 2px dashed #5e60ce !important;
