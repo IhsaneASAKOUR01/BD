@@ -9,19 +9,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# === STYLES ===
 st.markdown("""
     <style>
-    /* Root sizing */
-    html {
-        font-size: 13px !important;
-        zoom: 0.85;
-    }
-    
-    body, .stApp {
-        font-size: 13px;
-    }
-    
     /* Container width and spacing */
     .main .block-container {
         max-width: 900px;
