@@ -39,21 +39,8 @@ def run_app():
         )
     
         submit = st.button("Submit")
-    
-        if st.session_state.get("output_path_fr"):
-            with open(st.session_state["output_path_fr"], "rb") as f:
-                st.markdown('<div class="download-button">', unsafe_allow_html=True)
-                st.download_button("📥 Download French Version", f, file_name=st.session_state["output_path_fr"].name, mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-                st.markdown('</div>', unsafe_allow_html=True)
-    
-        if st.session_state.get("output_path_en"):
-            with open(st.session_state["output_path_en"], "rb") as f:
-                st.markdown('<div class="download-button">', unsafe_allow_html=True)
-                st.download_button("📥 Download English Version", f, file_name=st.session_state["output_path_en"].name, mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-                st.markdown('</div>', unsafe_allow_html=True)
-    
-        st.markdown('</div>', unsafe_allow_html=True)
 
+        st.markdown('</div>', unsafe_allow_html=True)
 
     # ✅ Reset the generation if a different file is uploaded
     if uploaded_report and "last_uploaded" in st.session_state:
@@ -118,3 +105,26 @@ def run_app():
             st.session_state["output_path_en"] = path_en
 
         st.session_state["generated"] = True
+        
+    # Download buttons
+    if st.session_state["output_path_fr"]:
+        with open(st.session_state["output_path_fr"], "rb") as f:
+            st.download_button(
+                label="📥 Download French Version",
+                data=f,
+                file_name=st.session_state["output_path_fr"].name,
+                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            )
+
+    if st.session_state["output_path_en"]:
+        with open(st.session_state["output_path_en"], "rb") as f:
+            st.download_button(
+                label="📥 Download English Version",
+                data=f,
+                file_name=st.session_state["output_path_en"].name,
+                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            )
+
+
+
+
