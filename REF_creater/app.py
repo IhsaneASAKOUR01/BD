@@ -40,63 +40,46 @@ def run_app():
     if "output_path_en" not in st.session_state:
         st.session_state["output_path_en"] = None
 
-    # --- CUSTOM UPLOAD UI ---
+    # Inject uploader and JavaScript trigger
     st.markdown("""
     <style>
-    .upload-box {
+    #upload_trigger {
         border: 2px dashed #5e60ce;
+        background: white;
         border-radius: 16px;
         padding: 3rem;
         text-align: center;
-        background: #ffffff;
-        margin: 2rem auto;
-        max-width: 600px;
-        cursor: pointer;
         font-size: 1.2rem;
         font-weight: 600;
         color: #5e60ce;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        transition: 0.3s ease;
+        max-width: 600px;
+        margin: 3rem auto;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
     }
-    .upload-box:hover {
+    #upload_trigger:hover {
         background: #f0f0ff;
         box-shadow: 0 0 12px rgba(94, 96, 206, 0.3);
     }
-    .real-upload {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-        position: absolute;
-    }
-    .big-button .stButton>button {
-        width: 100%;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        font-weight: bold;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #5e60ce, #7400b8);
-        color: white;
-        border: none;
-    }
-    .big-button .stButton>button:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 10px rgba(116, 0, 184, 0.3);
-    }
     </style>
+    
+    <div id="upload_trigger">
+    📄 Click here to upload your project report
+    </div>
+    
+    <script>
+    document.getElementById("upload_trigger").addEventListener("click", function() {
+        document.querySelector('[data-testid="stFileUploadDropzone"]').click();
+    });
+    </script>
     """, unsafe_allow_html=True)
     
-    uploaded_report = st.file_uploader("Upload your file", type=["docx", "pdf", "pptx", "txt"], key="real-upload")
-    
-    st.markdown(f"""
-    <label for="real-upload">
-        <div class="upload-box">
-            📄 Click here to upload your project report
-        </div>
-    </label>
-    """, unsafe_allow_html=True)
-    
-    if uploaded_report:
-        st.success(f"✅ Uploaded: `{uploaded_report.name}`", icon="📎")
+    uploaded_report = st.file_uploader(
+        label="Upload your project",
+        type=["docx", "pdf", "pptx", "txt"],
+        label_visibility="collapsed"
+    )
     
     st.markdown('<div class="big-button">', unsafe_allow_html=True)
     submit = st.button("🚀 Generate Reference")
