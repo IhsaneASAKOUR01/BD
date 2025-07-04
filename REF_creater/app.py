@@ -7,64 +7,11 @@ from .template_filler import fill_reference_table, fill_template_with_debug
 from .utils import load_report_text
 from deep_translator import GoogleTranslator
 
-st.markdown("""
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+def load_css(path: str):
+    with open(path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-<style>
-/* File uploader with glass effect */
-section[data-testid="stFileUploader"] {
-    background: rgba(255, 255, 255, 0.25) !important;
-    border: 2px dashed #5e60ce !important;
-    padding: 2rem !important;
-    border-radius: 20px !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    transition: transform 0.3s ease;
-}
-section[data-testid="stFileUploader"]:hover {
-    transform: scale(1.02);
-}
-
-/* Primary button with neon-glow */
-button[kind="primary"] {
-    background: linear-gradient(135deg, #5e60ce, #7400b8) !important;
-    color: white !important;
-    border: none !important;
-    padding: 0.8rem 1.6rem !important;
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
-    border-radius: 12px !important;
-    box-shadow: 0 0 10px rgba(116, 0, 184, 0.4) !important;
-    transition: all 0.3s ease-in-out !important;
-}
-button[kind="primary"]:hover {
-    background: linear-gradient(135deg, #7400b8, #5e60ce) !important;
-    box-shadow: 0 0 20px rgba(116, 0, 184, 0.7) !important;
-    transform: scale(1.05) !important;
-}
-
-/* Download buttons with glass+pop */
-.stDownloadButton > button {
-    background: rgba(94, 96, 206, 0.9) !important;
-    color: #fff !important;
-    font-weight: 700 !important;
-    padding: 0.75rem 1.4rem !important;
-    border-radius: 12px !important;
-    border: none !important;
-    margin: 1rem 0.5rem 0 0 !important;
-    backdrop-filter: blur(4px) !important;
-    transition: all 0.3s ease-in-out !important;
-}
-.stDownloadButton > button:hover {
-    background: #3a0ca3 !important;
-    transform: scale(1.07) !important;
-    box-shadow: 0 0 12px rgba(58, 12, 163, 0.5) !important;
-}
-</style>
-
-""", unsafe_allow_html=True)
-
+load_css("style.css")  # Or "assets/style.css" if stored there
 
 def run_app():
     if "field_values" not in st.session_state:
