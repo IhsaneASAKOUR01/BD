@@ -27,15 +27,18 @@ def run_app():
     st.markdown("""
     <div class='upload-section'>
         <label>Select a report file</label>
-    </div>
     """, unsafe_allow_html=True)
     
     uploaded_report = st.file_uploader(
         "Upload Project Report",
-        type=["docx", "pdf", "pptx", "txt"]
+        type=["docx", "pdf", "pptx", "txt"],
+        label_visibility="collapsed"
     )
-
+    
     submit = st.button("Submit", key="submit_ref_creator")
+    
+    st.markdown("</div>", unsafe_allow_html=True)
+
 
     # ✅ Reset the generation if a different file is uploaded
     if uploaded_report and "last_uploaded" in st.session_state:
