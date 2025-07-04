@@ -37,4 +37,39 @@ html, body, .stApp {
 }
 
 /*************************************************************************************** app */
+.upload-section {
+    background: #ffffff;
+    border: 2px dashed #5e60ce;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.upload-section label {
+    display: none !important;
+}
+
+button[data-testid="baseButton"] {
+    background: linear-gradient(135deg, #5e60ce, #7400b8) !important;
+    color: white !important;
+    padding: 1rem 2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease-in-out !important;
+    cursor: pointer !important;
+    border: none !important;
+    margin-top: 1.5rem !important;
+    text-align: center !important;
+}
+
+button[data-testid="baseButton"]:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 12px rgba(116, 0, 184, 0.4) !important;
+}
 
