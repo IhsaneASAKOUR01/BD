@@ -6,3 +6,4 @@ python-pptx
 deep-translator
 langdetect
 streamlit-extras
+streamlit-js-eval
