@@ -10,6 +10,7 @@ from deep_translator import GoogleTranslator
 st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
+<style>
 /* Fix layout for consistency */
 .main .block-container {
     max-width: 900px !important;
@@ -17,8 +18,6 @@ st.markdown("""
     padding-left: 1rem !important;
     padding-right: 1rem !important;
 }
-
-<style>
 .custom-title {
     text-align: center !important;
     font-size: 3rem !important;
