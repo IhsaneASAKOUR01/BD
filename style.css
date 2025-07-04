@@ -41,8 +41,7 @@ html, body, .stApp {
     background-color: #ffffff !important;
     border: 2px dashed #5e60ce !important;
     border-radius: 16px !important;
-    padding: 2.5rem !important;
-    margin: 2rem auto !important;
+    padding: 4rem !important;
     max-width: 900px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
     color: #5e60ce !important;
@@ -66,7 +65,7 @@ html, body, .stApp {
   font-weight: 700 !important;
   font-size: 1.1rem !important;
   border: none !important;
-  margin-top: 1rem !important;
+  margin-top: 3rem !important;
   cursor: pointer !important;
   min-width: 220px !important;
 }
