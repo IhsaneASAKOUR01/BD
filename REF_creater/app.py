@@ -11,65 +11,58 @@ st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
-.custom-title {
-    text-align: center !important;
-    font-size: 3rem !important;
-    font-weight: 600 !important;
-    color: #ffffff !important;
-    background: linear-gradient(135deg, #1d3557, #457b9d) !important;
-    padding: 1.5rem !important;
-    border-radius: 12px !important;
-    margin-bottom: 1rem !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
-}
-
-.custom-desc {
-    text-align: center !important;
-    color: #333 !important;
-    font-size: 1.1rem !important;
-    margin-bottom: 2rem !important;
-}
-
+/* File uploader with glass effect */
 section[data-testid="stFileUploader"] {
-    background: #ffffff !important;
-    border: 2px dashed #339af0 !important;
-    padding: 1.5rem !important;
-    border-radius: 15px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    border: 2px dashed #5e60ce !important;
+    padding: 2rem !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: transform 0.3s ease;
+}
+section[data-testid="stFileUploader"]:hover {
+    transform: scale(1.02);
 }
 
+/* Primary button with neon-glow */
 button[kind="primary"] {
-    background: linear-gradient(135deg, #339af0, #1c7ed6) !important;
-    border: none !important;
+    background: linear-gradient(135deg, #5e60ce, #7400b8) !important;
     color: white !important;
-    padding: 0.75rem 1.5rem !important;
-    border-radius: 10px !important;
-    font-weight: 600 !important;
-    font-size: 1rem !important;
-    transition: all 0.2s ease-in-out !important;
-    margin-top: 1rem !important;
+    border: none !important;
+    padding: 0.8rem 1.6rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 10px rgba(116, 0, 184, 0.4) !important;
+    transition: all 0.3s ease-in-out !important;
 }
 button[kind="primary"]:hover {
-    background: linear-gradient(135deg, #1c7ed6, #339af0) !important;
-    box-shadow: 0 0 10px rgba(51, 154, 240, 0.5) !important;
-    transform: scale(1.03) !important;
-}
-
-.stDownloadButton > button {
-    background-color: #339af0 !important;
-    color: white !important;
-    padding: 0.6rem 1.2rem !important;
-    border-radius: 8px !important;
-    font-weight: bold !important;
-    border: none !important;
-    margin: 1rem 0.5rem 0 0 !important;
-    transition: 0.2s ease-in-out !important;
-}
-.stDownloadButton > button:hover {
-    background-color: #1c7ed6 !important;
+    background: linear-gradient(135deg, #7400b8, #5e60ce) !important;
+    box-shadow: 0 0 20px rgba(116, 0, 184, 0.7) !important;
     transform: scale(1.05) !important;
 }
+
+/* Download buttons with glass+pop */
+.stDownloadButton > button {
+    background: rgba(94, 96, 206, 0.9) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    padding: 0.75rem 1.4rem !important;
+    border-radius: 12px !important;
+    border: none !important;
+    margin: 1rem 0.5rem 0 0 !important;
+    backdrop-filter: blur(4px) !important;
+    transition: all 0.3s ease-in-out !important;
+}
+.stDownloadButton > button:hover {
+    background: #3a0ca3 !important;
+    transform: scale(1.07) !important;
+    box-shadow: 0 0 12px rgba(58, 12, 163, 0.5) !important;
+}
 </style>
+
 """, unsafe_allow_html=True)
 
 
