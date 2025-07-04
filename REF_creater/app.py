@@ -6,6 +6,7 @@ from .gpt_extract import extract_field
 from .template_filler import fill_reference_table, fill_template_with_debug
 from .utils import load_report_text
 from deep_translator import GoogleTranslator
+import streamlit.components.v1 as components
 
 def load_css():
     css_path = Path(__file__).resolve().parent.parent / "style.css"
@@ -28,35 +29,45 @@ def run_app():
 
     st.markdown("""
     <style>
-    .upload-area {
-        background: #fff;
+    .custom-upload-box {
         border: 2px dashed #5e60ce;
+        background-color: #fff;
         border-radius: 16px;
-        padding: 2rem;
+        padding: 3rem;
         text-align: center;
-        max-width: 600px;
-        margin: 3rem auto;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-    .upload-title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 600;
-        margin-bottom: 1.5rem;
+        color: #5e60ce;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        max-width: 500px;
+        margin: 3rem auto 2rem auto;
+    }
+    .custom-upload-box:hover {
+        background-color: #f0f0ff;
+        box-shadow: 0 0 10px rgba(94, 96, 206, 0.3);
+    }
+    input[type="file"] {
+        display: none;
     }
     </style>
-    <div class="upload-area">
-        <div class="upload-title">📄 Upload Your Project Report</div>
+    
+    <label for="file-input">
+        <div class="custom-upload-box">
+            📄 Click or drag a file here to upload your project report
+        </div>
+    </label>
     """, unsafe_allow_html=True)
     
     uploaded_report = st.file_uploader(
         label="",
         type=["docx", "pdf", "pptx", "txt"],
-        label_visibility="collapsed"
+        label_visibility="collapsed",
+        key="file-input"
     )
     
     submit = st.button("🚀 Submit", key="submit_ref_creator")
-    
-    st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
