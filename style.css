@@ -1,3 +1,16 @@
+.ref-title {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+
+
 html, body, .stApp {
     font-family: 'Poppins', sans-serif !important;
     font-size: 13px !important;
