@@ -41,8 +41,9 @@ html, body, .stApp {
     background-color: #ffffff !important;
     border: 2px dashed #5e60ce !important;
     border-radius: 16px !important;
-    padding: 4rem !important;
-    max-width: 900px !important;
+    padding: 2.5rem !important;
+    margin-left: 2rem !important;
+    max-width: 700px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
     color: #5e60ce !important;
     text-align: center !important;
