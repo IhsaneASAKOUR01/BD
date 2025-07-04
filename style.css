@@ -37,6 +37,44 @@ html, body, .stApp {
 }
 
 /*************************************************************************************** app */
+.upload-wrapper {
+  background-color: #ffffff;
+  border: 2px dashed #5e60ce;
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: #5e60ce;
+  text-align: center;
+}
+
+/* Apply centering to the file uploader and button within .upload-wrapper */
+.upload-wrapper .stFileUploader,
+.upload-wrapper .stButton {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 1.5rem !important;
+}
+
+.upload-wrapper .stButton > button {
+  background-color: #5e60ce !important;
+  color: white !important;
+  padding: 0.8rem 3rem !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  border: none !important;
+  cursor: pointer !important;
+  min-width: 220px !important;
+}
+
+.upload-wrapper .stButton > button:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 0 10px rgba(116, 0, 184, 0.3) !important;
+  color: white !important;
+}
+
 [data-testid="stFileUploader"] {
     background-color: #ffffff !important;
     border: 2px dashed #5e60ce !important;
