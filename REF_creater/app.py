@@ -37,8 +37,9 @@ def run_app():
             "📄 Upload your project report",
             type=["docx", "pdf", "pptx", "txt"]
         )
-        st.markdown('</div>', unsafe_allow_html=True)    
+         
         submit = st.button("Submit")
+        st.markdown('</div>', unsafe_allow_html=True)   
 
     # ✅ Reset the generation if a different file is uploaded
     if uploaded_report and "last_uploaded" in st.session_state:
