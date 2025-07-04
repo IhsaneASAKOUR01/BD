@@ -9,6 +9,12 @@ st.set_page_config(
     layout="wide"
 )
 
+def load_css(path: str):
+    with open(path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css("style.css")  # Or "assets/style.css" if stored there
+
 # === SIDEBAR ===
 with st.sidebar:
     st.image("logo.png")
@@ -39,8 +45,3 @@ else:
     st.write("Extract, map, and reformat CVs into your preferred structure.")
     run_cvs_adapter()
 
-def load_css(path: str):
-    with open(path) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-load_css("style.css")  # Or "assets/style.css" if stored there
