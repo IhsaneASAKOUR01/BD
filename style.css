@@ -1,70 +1,97 @@
-body::before {
-    content: "✅ CSS LOADED" ;
-    color: red;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 9999;
-    font-size: 20px;
+html, body, .stApp {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    zoom: 0.9 !important;
+    background-color: #f8f9fa !important;
+}
+.main .block-container {
+    max-width: 900px !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin: auto !important;
+}
+[data-testid="stSidebar"] {
+    background-color: #f0f0ff !important;
+    width: 300px !important;
+    min-width: 300px !important;
+    border-right: 2px solid #dee2e6 !important;
+}
+[data-testid="stSidebar"] img {
+    display: block !important;
+    width: 210px !important;
+    margin: 1rem auto 4rem 2rem !important;
+}
+.centered-title {
+    text-align: center !important;
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    color: #1d3557 !important;
+    font-family: 'Comic Neue', cursive !important;
+    margin-bottom: 0.2rem !important;
+}
+.subtitle {
+    text-align: center !important;
+    font-size: 1.5rem !important;
+    color: #6c757d !important;
+    margin-bottom: 2rem !important;
 }
 
 h2 {
     background: linear-gradient(90deg, #5e60ce, #7400b8);
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    font-weight: 900 !important;
-    font-size: 2.2rem !important;
-    margin-top: 2rem !important;
-    margin-bottom: 0.5rem !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-/* Fancy file uploader */
 section[data-testid="stFileUploader"] {
-    background: rgba(255, 255, 255, 0.12) !important;
-    border: 2px dashed #5e60ce !important;
-    border-radius: 16px !important;
-    padding: 2rem !important;
-    backdrop-filter: blur(12px) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
-    transition: all 0.3s ease-in-out !important;
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px dashed #5e60ce;
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 section[data-testid="stFileUploader"]:hover {
-    transform: scale(1.02) !important;
-    box-shadow: 0 12px 32px rgba(94, 96, 206, 0.25) !important;
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(94, 96, 206, 0.25);
 }
 
 /* Stylish primary button */
 button[kind="primary"] {
-    background: linear-gradient(135deg, #5e60ce, #7400b8) !important;
-    color: white !important;
-    border: none !important;
-    padding: 0.8rem 1.6rem !important;
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
-    border-radius: 12px !important;
-    box-shadow: 0 0 10px rgba(116, 0, 184, 0.4) !important;
-    transition: all 0.3s ease-in-out !important;
+    background: linear-gradient(135deg, #5e60ce, #7400b8);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(116, 0, 184, 0.4);
+    transition: all 0.3s ease-in-out;
 }
 button[kind="primary"]:hover {
-    background: linear-gradient(135deg, #7400b8, #5e60ce) !important;
-    transform: scale(1.05) !important;
-    box-shadow: 0 0 20px rgba(116, 0, 184, 0.7) !important;
+    background: linear-gradient(135deg, #7400b8, #5e60ce);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(116, 0, 184, 0.7);
 }
 
 /* Glow for download buttons */
 .stDownloadButton > button {
-    background: rgba(94, 96, 206, 0.9) !important;
-    color: white !important;
-    font-weight: 700 !important;
-    padding: 0.75rem 1.4rem !important;
-    border-radius: 12px !important;
-    border: none !important;
-    margin: 1rem 0.5rem 0 0 !important;
-    backdrop-filter: blur(4px) !important;
-    transition: all 0.3s ease-in-out !important;
+    background: rgba(94, 96, 206, 0.9);
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem 1.4rem;
+    border-radius: 12px;
+    border: none;
+    margin: 1rem 0.5rem 0 0;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease-in-out;
 }
 .stDownloadButton > button:hover {
-    background: #3a0ca3 !important;
-    transform: scale(1.07) !important;
-    box-shadow: 0 0 12px rgba(58, 12, 163, 0.5) !important;
+    background: #3a0ca3;
+    transform: scale(1.07);
+    box-shadow: 0 0 12px rgba(58, 12, 163, 0.5);
 }
