@@ -11,13 +11,6 @@ st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
-html, body, .stApp {
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 13px !important;
-    zoom: 0.85 !important;
-    background-color: #f0f4f8v;
-}
-
 .custom-title {
     text-align: center !important;
     font-size: 3rem !important;
