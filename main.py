@@ -106,7 +106,7 @@ with st.sidebar:
 # === HEADER ===
 st.markdown("<div class='centered-title'>BD Tools Dashboard</div>", unsafe_allow_html=True)
 st.markdown("<div class='subtitle'>Smart automation tools for project references & resumes</div>", unsafe_allow_html=True)
-st.markdown("---")
+#st.markdown("---")
 
 # === MAIN ===
 if choice == "CVs & REFs Adapter":
